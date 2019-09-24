@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+body {
+    margin: 0;
+}
+
+/*
+各パートにパディング、背景、テキスト色などを指定。
+<div class="container">の子要素に指定する。
+*/
+a:link { color : #000000; }
+a:visited { color : #000000; }
+a:hover {color:#ffb62c;}
+.nav {
+    font-family: sans-serif;
+    font-size: 1em;
+    display: flex;
+    padding: 0px;
+    border-bottom: solid 4px;
+    border-color: #ffc749;
+}
+.nav-inner { 
+    margin: 0px;
+    padding: 0px;
+}
+.navbar {
+    list-style: none;
+    display: flex!important;
+    color: darkgray;
+    padding: 0px;
+    margin: 15px;
+}     
+.navbar li a {
+    display: inline;
+    padding: 10px 10px 10px 10px;
+    text-decoration: none;
+}  
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.introduction-teacher h1{
+    position: absolute;
+    color: white;
+    top: 5%;
+    left: 1%;
+    font-weight: bold; /*太字に*/
+    font-size: 3em;/*サイズ2倍*/
+    font-family :sans-serif;
+    padding: 10;
+    margin;10;
+}
+.introduction-teacher p{
+    position: absolute;
+    color: white;
+    top: 30%;
+    left: 50%;
+    font-weight: bold; /*太字に*/
+    font-size: 2em;/*サイズ2倍*/
+    font-family :sans-serif;
+    padding: 10;
+    margin;10;
+}
+section{
+    font-family: sans-serif;
+}
+.main-inner {
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+.needs-validation {
+    display: inline-block;
+    text-align: left;
+    line-height: 2em; 
+}
+.needs-validation input{
+    font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: #aaaaaa;
+	border: 1px solid #ffffff;
+	box-shadow: 1px 1px 2px 0 #707070 inset;
+	border-radius: 4px;
+}
+
+.select-botton{
+    display: flex;
+}
+.select-botton input{
+    text-align: center;
+    margin: 0px 20px
+}
+.checkbox input{
+    box-sizing: none;
+    border: none;
+    box-shadow: none;
+}
+.profile-image img{
+    border: 1px solid;
+}
+.profile-image input{
+    box-sizing: none;
+    border: none;
+    box-shadow: none;
+}
+textarea {
+    margin: 0.5em 0;
+    padding: 0.75em;
+    width: 500px;
+    height: 14em;
+    font-size: 16px;
+    transition: 0.3s;
+	letter-spacing: 1px;
+	color: #aaaaaa;
+	border: 1px solid #ffffff;
+	box-shadow: 1px 1px 2px 0 #707070 inset;
+	border-radius: 4px;
+}
+.continue {/*ボタン*/
+    font-size: 1em;
+    background-color: white;
+    position: relative;
+    padding: 0.2em 1em;
+    text-decoration: none;
+    border-bottom: solid 4px #ffc749;
+    border-radius: 3px;
+}
+.continue :active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+
+.sidebar-inner{
+    background: red
+}
+.footer-inner{
+    background: #faf22c    
+}

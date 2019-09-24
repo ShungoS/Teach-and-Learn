@@ -1,0 +1,79 @@
+{% extends "tl_app/base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'tl_app/searchclass/searchclass.css' %}">
+
+<section>
+    <div class="container">
+        <main>
+            <div class="main-inner" >
+            <label for="search">Search class</label>
+            <input type="text" id=search placeholder="Keyword"> 
+            <ul class="searchclass">
+                <li>
+                <a href="">
+                <img src="{% static 'tl_app/searchclass/img/programming.jpg' %}" width="200" height="200" alt="Programming" class="search-img">
+                </a>
+                    </li>
+                 <li>
+                <a href="">
+                <img src="{% static 'tl_app/searchclass/img/language.jpg' %}" width="200" height="200" alt="Language" class="search-img">
+                </a>
+                    </li>
+                 <li>
+                <a href="">
+                <img src="{% static 'tl_app/searchclass/img/art.jpg' %}" width="200" height="200" alt="Art" class="search-img">
+                </a>
+                    </li>
+                <li>
+                <a href="">
+                <img src="{% static 'tl_app/searchclass/img/business.jpg' %}" width="200" height="200" alt="Business" class="search-img">
+                </a>
+                    </li>
+                <li>
+                <a href="img/">
+                <img src="{% static 'tl_app/searchclass/img/health.jpg' %}" width="200" height="200" alt="Health" class="search-img">
+                </a>
+                    </li>
+                <li>
+                <a href="img/">
+                <img src="{% static 'tl_app/searchclass/img/life.jpg' %}" width="200" height="200" alt="Life" class="search-img">
+                </a>
+                    </li>
+                <li>
+                <a href="img/">
+                <img src="{% static 'tl_app/searchclass/img/sports.jpg' %}" width="200" height="200" alt="Sports" class="search-img">
+                </a>
+                    </li>
+                <li>
+                <a href="img/">
+                <img src="{% static 'tl_app/searchclass/img/kids.jpg' %}" width="200" height="200" alt="Kids" class="search-img">
+                </a>
+                    </li>
+                <li>
+                <a href="img/">
+                <img src="{% static 'tl_app/searchclass/img/science.jpg' %}" width="200" height="200" alt="Sience" class="search-img">
+                </a>
+                    </li>
+                <li>
+                <a href="img/">
+                <img src="{% static 'tl_app/searchclass/img/music.jpg' %}" width="200" height="200" alt="Music" class="search-img">
+                </a>
+                    </li>
+                <li>
+                <a href="img/">
+                <img src="{% static 'tl_app/searchclass/img/society.jpg' %}" width="200" height="200" alt="Society" class="search-img">
+                </a>
+                    </li>
+                <li>
+                <a href="img/">
+                <img src="{% static 'tl_app/searchclass/img/others.jpg' %}" width="200" height="200" alt="Others" class="search-img">
+                </a>
+                    </li>
+            </ul>
+                </div><!-- /.main-inner -->
+        </main>
+        </div><!-- /.container-->
+        </section>
+
+{% endblock content %}

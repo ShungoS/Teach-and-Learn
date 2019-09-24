@@ -1,0 +1,67 @@
+{% extends "tl_app/base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'tl_app/otherteacher/otherteacher.css' %}">
+
+<section>
+        
+    <div class="container">
+        <main class="main-inner">
+            <div class="teacher" >
+            <h2 class="main-title">Teacher Name</h2>
+        <form type="get" action="">
+            <div class="hyouka">
+                <input id="hoshi1" type="radio" name="hoshi" value="5" />
+                <label for="hoshi1">★</label>
+                <input id="hoshi2" type="radio" name="hoshi" value="4" />
+                <label for="hoshi2">★</label>
+                <input id="hoshi3" type="radio" name="hoshi" value="3" />
+                <label for="hoshi3">★</label>
+                <input id="hoshi4" type="radio" name="hoshi" value="2" />
+                <label for="hoshi4">★</label>
+                <input id="hoshi5" type="radio" name="hoshi" value="1" />
+                <label for="hoshi5">★</label>
+            </div>
+                </form>
+                <strong class="choice">Overall rate</strong>
+                <h3>Uploaded Cources</h3>
+                <ul class="teach-history">
+                    <li>
+                        <a href="">
+                <img src="" width="70" height="70" alt="aaa" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                    <li>
+                        <a href="">
+                <img src="" wwidth="70" height="70" alt="course" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                    <li>
+                        <a href="">
+                <img src="" width="70" height="70" alt="course" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                    <li>
+                        <a href="">
+                <img src="" width="70" height="70" alt="course" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                </ul>
+        </div><!-- /.teacher -->
+        </main>
+        <div class="profile">
+         <aside class="sidebar">
+        <h3>Profile</h3>
+            <div class="profile-image">
+                <img src="profile.png" width="200" height="140" alt="Profile Picture">
+            </div>
+        </aside>
+            </div>
+        </div><!-- /.container-->
+        </section>
+
+{% endblock content %}

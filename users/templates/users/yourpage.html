@@ -1,0 +1,165 @@
+{% extends "tl_app/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h1>{{ user.username }}</h1>
+<link rel="stylesheet" type="text/css" href="{% static 'tl_app/yourpage/yourpage.css' %}">
+
+<section>
+        
+    <div class="container">
+        <main class="main-inner">
+            <div class="student" >
+            <div class="title">
+            <h2 class="main-title">As a Student</h2>
+                <label for="search">Search class</label>
+                    <input type="text" id=search placeholder="Keyword"> 
+                </div> 
+            <h3>Study history</h3>
+                <ul class="study-history">
+                    <li>
+                        <a href="">
+                <img src="" width="70" height="70" alt="course" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                    <li>
+                        <a href="">
+                <img src="" wwidth="70" height="70" alt="course" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                    <li>
+                        <a href="">
+                <img src="" width="70" height="70" alt="course" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                    <li>
+                        <a href="">
+                <img src="" width="70" height="70" alt="course" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                    
+                </ul>
+                <a href="">
+                    <p class="view-more">View More</p>
+                </a>
+            <canvas id="myChart"></canvas>
+             
+            <div class="recommend-cource">
+                <h4>Recommend cources for you</h4>
+                <ul class="recommends">
+                    <li>
+                        <a href="">
+                <img src="" width="70" height="70" alt="course" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                    <li>
+                        <a href="">
+                <img src="" wwidth="70" height="70" alt="course" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                    <li>
+                        <a href="">
+                <img src="" width="70" height="70" alt="course" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                    <li>
+                        <a href="">
+                <img src="" width="70" height="70" alt="course" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                </ul>
+                <a href="">
+                    <p class="view-more">View More</p>
+                </a>
+                </div><!-- /.recommend-cource -->
+                
+        </div><!-- /.student -->
+            <div class="teacher" >
+            <h2 class="main-title">As a Teacher</h2>
+                <h3>Uploaded Cources</h3>
+                <ul class="teach-history">
+                    <li>
+                        <a href="">
+                <img src="" width="70" height="70" alt="course" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                    <li>
+                        <a href="">
+                <img src="" wwidth="70" height="70" alt="course" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                    <li>
+                        <a href="">
+                <img src="" width="70" height="70" alt="course" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                   
+                </ul>
+                <a href="">
+                    <p class="view-more">View More</p>
+                </a>
+        </div><!-- /.teacher -->
+            
+    <div class="your-requests">
+    <h3>Requested Class</h3>
+            <ol>
+    {% for reqpost in reqposts %}
+    <li>
+        <article class="media content-section">
+          <div class="media-body">
+            <h2><a class="article-title" href="">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+    </article> <!-- Requestposts　-->
+    </li>
+    
+    {% endfor %}
+            </ol>
+        <a href="{%url 'reqposts' %}"><p class="view-more">View More</p></a>
+    </div><!-- yourrequests -->
+           
+            
+    
+        </main>
+        <div class="profile">
+         <aside class="sidebar">
+        <h2>Profile</h2>
+            <div class="profile-image">
+                <img src="{{ user.profile.image.url }}" width="200" height="140" alt="Profile Picture">
+            </div>
+             <h3 class="yourname">{{ user.username }}</h3>
+             
+             <h3 class="youremail">{{ user.email }}</h3>
+             
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="form-title">Profile Info</legend>
+                {{ u_form|crispy }}
+                {{ p_form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="submit-btn" type="submit">Update</button>
+            </div>
+        </form>
+             
+            <p class="profile-sentence" src=""> </p>
+        </aside>
+            <a href="{%url 'tl-profileedit' %}" >
+               <input type="button" name="edit" value="Edit" class="edit-profile"></a>
+            </div>
+        </div><!-- /.container-->
+        </section>
+
+{% endblock content %}

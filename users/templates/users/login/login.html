@@ -1,0 +1,28 @@
+{% extends "tl_app/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'users/login/login.css' %}">
+
+    <div class="content-section">
+        <form method="post">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="form-title">Log In</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="submit-btn" type="submit">Log In</button>
+                <small class="text-muted ml-2">
+                <a href="{% url 'password_reset' %}">Forgot Password?</a>
+                </small>
+            </div>
+        </form>
+        <div class="">
+            <small>Need An Account? <a href="{% url 'register' %}">Sign Up Now</a>
+            </small>
+        </div>
+    </div>
+
+{% endblock content %}

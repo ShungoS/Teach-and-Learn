@@ -1,0 +1,23 @@
+{% extends "tl_app/base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'tl_app/login/login.css' %}">
+
+
+    <div class="log-in">
+    <form class="form-login">
+  <h1 class="title">Please Log in</h1>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <input type="email" id="inputemail" class="email" placeholder="Email address" required autofocus>
+  <label for="inputPassword" class="password">Password</label>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div>
+  <button class="button" type="submit">Log in</button>
+  <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+</form>
+      </div>
+{% endblock content %}

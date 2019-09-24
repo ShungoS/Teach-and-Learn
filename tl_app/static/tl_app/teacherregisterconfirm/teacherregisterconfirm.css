@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+body {
+    margin: 0;
+}
+
+/*
+各パートにパディング、背景、テキスト色などを指定。
+<div class="container">の子要素に指定する。
+*/
+.header-inner {
+    background: #faf22c
+}
+
+.navbar {
+    list-style: none;
+     display: flex
+}
+
+.nav-inner {
+    color: #31ea3f;
+    background: #ffd27c
+}       
+.navbar li a {
+    display: inline;
+    padding: 10px 10px 10px 10px;
+    text-decoration: none;
+}
+    
+a:hover {
+    color:yellow
+}
+.main-inner {
+    background: white
+}
+.select-botton{
+    display: flex;
+}
+.select-botton input{
+    text-align: center;
+    margin: 0px 20px
+}
+
+.sidebar-inner{
+    background: red
+}
+.footer-inner{
+    background: #faf22c    
+}

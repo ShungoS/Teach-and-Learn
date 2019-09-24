@@ -1,0 +1,60 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>   
+    <link rel="stylesheet" type="text/css" href="{% static 'tl_app/main.css' %}">
+      
+    {% if title %}
+      <title>Teach and Learn - {{title}} </title>
+ 	{% else %}
+      <title>Teach and Learn </title>
+	{% endif %}
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+        <header>
+        <nav class="nav">
+        <a href="{%url 'tl-home' %}">
+            <img src="{% static 'tl_app/T&L%20Logo.png' %}" width="60" height="auto">
+            </a>
+            <div class="nav-inner">
+            <ul class=navbar>
+                <li><a href="{%url 'tl-home' %}"> Home</a></li>
+                <li><a href="{%url 'tl-contact' %}"> Contact</a></li>
+    {% if user.is_authenticated %}
+                <li><a href="{%url 'logout' %}"> Logout</a></li> 
+                <li><a href="{%url 'yourpage' %}"> Your page</a></li>
+                <li><a href="{%url 'post-create' %}"> New Post</a></li>
+    {% else %}
+                <li><a href="{%url 'register' %}"> Sign up</a></li>
+                <li><a href="{%url 'login' %}"> Login</a></li> 
+    {% endif %}
+                
+            </ul>
+      </div><!-- /.nav-inner -->
+        </nav> 
+            </header>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="popup-messages">
+    {{ message }}
+            </div>
+        {% endfor %}
+        {% endif %}
+{% block content %}{% endblock %}
+    
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+            <p class="logo">
+                <a href="{%url 'tl-home' %}">
+            <img src="{% static 'tl_app/T&L%20Logo.png' %}" width="60" height="auto">
+            </a>
+                </p>
+            </div><!-- /.foot-inner -->
+        </div><!-- /.container -->
+        </footer>
+
+    </body>
+</html>

@@ -1,0 +1,149 @@
+{% extends "tl_app/base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'tl_app/yourpage/yourpage.css' %}">
+
+<section>
+        
+    <div class="container">
+        <main class="main-inner">
+            <div class="student" >
+            <div class="title">
+            <h2 class="main-title">As a Student22</h2>
+                <label for="search">Search class</label>
+                    <input type="text" id=search placeholder="Keyword"> 
+                </div> 
+            <h3>Study history</h3>
+                <ul class="study-history">
+                    <li>
+                        <a href="">
+                <img src="" width="70" height="70" alt="course" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                    <li>
+                        <a href="">
+                <img src="" wwidth="70" height="70" alt="course" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                    <li>
+                        <a href="">
+                <img src="" width="70" height="70" alt="course" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                    <li>
+                        <a href="">
+                <img src="" width="70" height="70" alt="course" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                    
+                </ul>
+                <a href="">
+                    <p class="view-more">View More</p>
+                </a>
+            <canvas id="myChart"></canvas>
+             
+            <div class="recommend-cource">
+                <h4>Recommend cources for you</h4>
+                <ul class="recommends">
+                    <li>
+                        <a href="">
+                <img src="" width="70" height="70" alt="course" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                    <li>
+                        <a href="">
+                <img src="" wwidth="70" height="70" alt="course" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                    <li>
+                        <a href="">
+                <img src="" width="70" height="70" alt="course" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                    <li>
+                        <a href="">
+                <img src="" width="70" height="70" alt="course" class="course-img">
+                    <p class="course-name">Course1</p>
+                </a>
+                    </li>
+                </ul>
+                <a href="">
+                    <p class="view-more">View More</p>
+                </a>
+                </div><!-- /.recommend-cource -->
+                
+        </div><!-- /.student -->
+            
+            
+    <div class="teacher" >
+            <h2 class="main-title">As a Teacher</h2>
+                <h3>Uploaded Cources</h3>
+                <ul class="teach-history">
+        {% for post in posts %}
+        <li>
+    <article class="media content-section">
+            <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}"　width="100" height="70" >
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+            <a href="{% url 'post-detail' post.id %}">
+            <img src="{{ post.thumbnail.url }}"　width="100" height="70" >
+                </a>
+            <p class="article-content">{{ post.file }}</p>
+          </div>
+    </article> <!-- 仮post　-->
+       </li>
+      {% endfor %}
+                    
+                </ul>
+                <a href="">
+                    <p class="view-more">View More</p>
+                </a>
+    </div><!-- /.teacher -->
+            
+    <div class="your-requests">
+        <h3>Requested Class</h3>
+            <ol>
+    {% for reqpost in reqposts %}
+    <li>
+        <article class="media content-section">
+          <div class="media-body">
+            <h2><a class="article-title" href="">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+    </article> <!-- Requestposts　-->
+    </li>
+    
+    {% endfor %}
+            </ol>
+        <a href="{%url 'reqposts' %}"><p class="view-more">View More</p></a>
+    </div><!-- yourrequests -->
+            
+        </main>
+        
+    <div class="profile">
+         <aside class="sidebar">
+        <h3>Profile</h3>
+            <div class="profile-image">
+                <img src="profile.png" width="200" height="140" alt="Profile Picture">
+            </div>
+            <p class="profile-sentence" src=""> </p>
+        </aside>
+            <a href="{%url 'tl-profileedit' %}" >
+               <input type="button" name="edit" value="Edit" class="edit-profile"></a>
+    </div>
+        </div><!-- /.container-->
+        </section>
+
+{% endblock content %}

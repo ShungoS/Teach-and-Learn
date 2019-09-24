@@ -1,0 +1,18 @@
+{% load static %}
+        <div class="sidebar-inner">
+        <a href="reqposts">   
+        Requests
+            </a> 
+            <ol class="feature-request">
+    {% for reqpost in reqposts %}
+    <li>
+        <article class="media content-section">
+          <div class="media-body">
+            <h2><a class="article-title" href="">{{ reqpost.title }}</a></h2>
+          </div>
+    </article> <!-- Requestposts　-->
+    </li>           
+    {% endfor %}
+            
+            </ol>
+            </div><!-- /.sidebar-inner -->

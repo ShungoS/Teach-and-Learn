@@ -1,0 +1,86 @@
+{% extends "tl_app/base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'tl_app/takeclass/takeclass.css' %}">
+
+<section>
+        
+    <div class="container">
+        <main class="main">
+            <div class="main-inner" >
+                <div class="search-tub">
+                <label for="search">Search class</label>
+            <input type="text" id=search placeholder="Keyword">
+                    </div>
+        <div class="course-movie">
+            <h2>Title</h2>
+               <video src="samplevideo.mp4" poster="thumb.jpg" controls></video>
+                </div>
+        </div><!-- /.main-inner -->
+            <div class="sub-window">
+                
+                <div class="teacher-info">
+                <a href="">
+                    <h3>teacher A</h3>
+                    <img src="teacherA.jpg" width="70" height="70" alt="course" class="teacher-img">
+                    <p>Teacher A Teacher ATeacher ATeacher ATeacher ATeacher ATeacher ATeacher ATeacher ATeacher ATeacher ATeacher ATeacher ATeacher ATeacher ATeacher ATeacher A Teacher A Teacher A Teacher A Teacher A Teacher A Teacher A Teacher A Teacher A Teacher A Teacher A Teacher A Teacher A Teacher A Teacher A Teacher A Teacher A Teacher A Teacher</p></a>
+                </div>
+                <form type="get" action="">
+            <div class="hyouka">
+                <input id="hoshi1" type="radio" name="hoshi" value="5" />
+                <label for="hoshi1">★</label>
+                <input id="hoshi2" type="radio" name="hoshi" value="4" />
+                <label for="hoshi2">★</label>
+                <input id="hoshi3" type="radio" name="hoshi" value="3" />
+                <label for="hoshi3">★</label>
+                <input id="hoshi4" type="radio" name="hoshi" value="2" />
+                <label for="hoshi4">★</label>
+                <input id="hoshi5" type="radio" name="hoshi" value="1" />
+                <label for="hoshi5">★</label>
+            </div>
+                </form>
+                <strong class="choice">Give your feedback</strong><br>
+            <textarea name="profile" id="profile" placeholder="Comment, Question"></textarea>
+                </div>
+        </main>
+        <aside class="sidebar">
+            <div class="sidebar-inner">
+        <h3>Related courses</h3>
+            <ol class="feature-request">
+                <li>
+                    <a href="">Course1</a>
+                    </li>
+                    <li>
+                    <a href="">Course1</a>
+                    </li>
+                    <li>
+                    <a href="">Course1</a>
+                    </li>
+                    <li>
+                    <a href="">Course1</a>
+                    </li>
+                    <li>
+                    <a href="">Course1</a>
+                    </li>
+                    <li>
+                    <a href="">Course1</a>
+                    </li>
+                    <li>
+                    <a href="">Course1</a>
+                    </li>
+                    <li>
+                    <a href="">Course1</a>
+                    </li>
+                    <li>
+                    <a href="">Course1</a>
+                    </li>
+                    <li>
+                    <a href="">Course1</a>
+                    </li>
+            </ol>
+                </div><!-- /.sidebar-inner -->
+        </aside>
+        </div><!-- /.container-->
+        </section>
+
+{% endblock content %}

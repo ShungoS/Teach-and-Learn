@@ -1,0 +1,160 @@
+@charset "utf-8";
+
+body {
+    margin: 0;
+}
+
+/*
+各パートにパディング、背景、テキスト色などを指定。
+<div class="container">の子要素に指定する。
+*/
+a:link { color : #000000; }
+a:visited { color : #000000; }
+a:hover {color:#ffb62c;}
+.nav {
+    font-family: sans-serif;
+    font-size: 1em;
+    display: flex;
+    padding: 0px;
+    border-bottom: solid 4px;
+    border-color: #ffc749;
+}
+.nav-inner { 
+    margin: 0px;
+    padding: 0px;
+}
+.navbar {
+    list-style: none;
+    display: flex!important;
+    color: darkgray;
+    padding: 0px;
+    margin: 15px;
+}
+.navbar li:first-child {
+    margin-right: auto;
+}     
+.navbar li a {
+    display: inline;
+    padding: 10px 10px 10px 10px;
+    text-decoration: none;
+}    
+.introduction {
+    position: relative;
+    margin: 0 auto 0 auto;
+}
+.introduction p{
+    position: absolute;
+    color: white;
+    top: 40%;
+    left: 80%;
+    font-weight: bold; /*太字に*/
+    font-size: 2em;/*サイズ2倍*/
+    font-family :sans-serif;
+    padding: 10;
+    margin;30;
+}
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.main {
+    text-align: center;
+}
+section .container {
+    display: flex;
+}
+
+.select-botton input {
+    font-size: 1.5em;
+    font-family: sans-serif;
+    margin: 20px 20px;
+    padding: 5px 20px;
+}
+.search {/*ボタン*/
+    background-color: white;
+    position: relative;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: #ffc749;
+    border-bottom: solid 4px #ffc749;
+    border-radius: 3px;
+}
+.search:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+.teacher{/*ボタン*/
+    background-color: white;
+    position: relative;
+    text-decoration: none;
+    color: #ffc749;
+    border-bottom: solid 4px #ffc749;
+    border-radius: 3px;
+}
+.teacher:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+.request {/*ボタン*/
+    background-color: white;
+    position: relative;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: #ffc749;
+    border-bottom: solid 4px #ffc749;
+    border-radius: 3px;
+}
+.request :active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+.main h2{ 
+    font-family: sans-serif;
+}
+.courses {
+    display: grid;
+    grid-template-columns:repeat(3,minmax(250px, 1fr));
+    list-style: none;
+    margin: 10;
+    padding: 10;
+    width: 768px;
+    height: auto
+}
+.course-img {
+    margin: 10px 30px 0px 20px;
+}
+.courses p {
+    margin: 0px 20px 30px 20px;
+    word-wrap: break-word;
+}
+.sidebar-inner {
+    padding: 0.5em;
+    font-family: sans-serif;
+    border: solid 2px #ffc749;
+    border-radius: 8px;
+    margin: 30px;
+}
+.feature-request a {
+    word-wrap: break-word;
+}
+@media only screen and (min-width: 768px) {
+    section .container {
+        flex-flow: row;
+    }
+    main{
+    flex:1 1 auto;
+    }
+    .sidebar {
+        flex:0 0 340px;
+    }
+}

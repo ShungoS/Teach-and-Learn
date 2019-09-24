@@ -1,0 +1,96 @@
+{% extends "tl_app/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class=introduction>
+        <img src="{% static 'tl_app/md-duran-628456-unsplash2.jpg' %}" width="100%" alt="graduate" class="img-responsive">
+        <p>Teach and Learn</p>
+        </div><!-- /.introduction-->
+
+    <section>
+  
+    <div class="container">
+        <main class="main">
+            <div class="main-inner" >
+                <div class="select-botton">
+            <a href="{%url 'tl-searchclass' %}" >
+               <input type="button" name="search" value="Search class" class="search"></a>
+            <a href="{%url 'tl-teacherregister' %}">
+            <input type="button" name="teacher" value="Become teacher" class="teacher"></a>
+            <a href="{%url 'reqpost-create' %}">
+            <input type="button" name="request" value="Request class" class="request">
+                </a>
+                    </div><!-- /*select botton -->
+    <div class="main">
+    <h2>Feature Courses</h2>            
+   <ul class="courses">
+   {% for post in object_list %}
+    <li>
+    <article class="media content-section">
+            <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}"　width="100" height="70" >
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+            <a href="{% url 'post-detail' post.id %}">
+            <img src="{{ post.thumbnail.url }}"　width="100" height="70" >
+                </a>
+            <p class="article-content">{{ post.file }}</p>
+          </div>
+    </article> <!-- post　-->
+       </li>
+      {% endfor %} 
+         </ul>   
+        
+      {% if is_paginated %}
+
+      {% if page_obj.has_previous %}
+        <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+      {% endif %}
+
+      {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+          <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+          <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+      {% endif %}
+
+    {% endif %}
+    </div><!-- /.main-inner -->        
+
+        </main>
+        
+         <aside class="sidebar">
+<div class="sidebar-inner">
+        <a href="reqposts">   
+        Requests
+            </a> 
+            <ol class="feature-request">
+    {% for reqpost in more_context %}
+    <li>
+        <article class="media content-section">
+          <div class="media-body">
+            <h2><a class="article-title" href="">{{ reqpost.title }}</a></h2>
+          </div>
+    </article> <!-- Requestposts　-->
+    </li>           
+    {% endfor %}
+ 
+            </ol>
+            </div><!-- /.sidebar-inner -->
+        </aside>
+            
+        </div><!-- /.container-->
+        </section>
+
+{% endblock content %}

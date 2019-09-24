@@ -1,0 +1,75 @@
+{% extends "tl_app/base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'tl_app/request/request.css' %}">
+
+<section>
+        
+    <div class="container">
+        <main>
+            <div class="main-inner" >
+                <div class="introduction-request">
+            <img src="{% static 'tl_app/request/requestcourse.jpg' %}" width="100%" alt="request-course" class="img-responsive">
+            <h1>Request course</h1>
+                <p>Ask people what you want to learn</p>
+                </div>
+                <div class="request-form">
+            <h2>Write your request</h2>
+            <textarea name="request" id="profile" placeholder="Write your Request"></textarea>
+                    <div class="other-requests">
+                <h3>Look other requests</h3>
+                    <label for="search">Search request</label>
+            <input type="text" id=search placeholder="Keyword">
+                </div>
+                    </div>
+                <hr class="center-line" style="border:0;border-top:2px double #ffd27c;">
+                <div class="request-search">
+            
+                    <div class="feature-request">
+                <label for="feature-request"><h2>Feature Requests</h2></label>
+                <ol class="request-list" id="feature-request" name="feature-request">
+                    <li>
+                    <a href="">Sample</a>
+                        <p class='like-btn' data-href="{{ app.get_api_like_url }}">
+                            <span class="liked-cnt">{{ app.like.count }}</span>
+                            <i class="fas fa-kiss-wink-heart"></i>
+                        </p>
+                    </li>
+                    <li>
+                    <a href="">SampleSampleSample SampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSampleSample</a>
+                    </li>
+                    <li>
+                    <a href="">Sample</a>
+                    </li>
+                    <li>
+                    <a href="">Course1</a>
+                    </li>
+                    <li>
+                    <a href="">Course1</a>
+                    </li>
+                    <li>
+                    <a href="">Course1</a>
+                    </li>
+                    <li>
+                    <a href="">Course1</a>
+                    </li>
+                    <li>
+                    <a href="">Course1</a>
+                    </li>
+                    <li>
+                    <a href="">Course1</a>
+                    </li>
+                    <li>
+                    <a href="">Course1</a>
+                    </li>
+                
+                </ol>
+                        </div><!-- /.feature-request -->
+                
+                    </div><!-- /.request-search -->
+        </div><!-- /.main-inner -->
+        </main>
+        </div><!-- /.container-->
+        </section>
+
+{% endblock content %}

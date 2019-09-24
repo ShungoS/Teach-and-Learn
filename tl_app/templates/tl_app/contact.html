@@ -1,0 +1,27 @@
+{% extends "tl_app/base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'tl_app/contact/contact.css' %}">
+
+<div class="container">
+        <div class="main-inner" >
+      <form class="needs-validation" novalidate>
+        <div class="account">
+            <h1>Contact Us</h1>
+            <label for="email">Your Email</label><br>
+                <input class="email" type="email" id="email" required><br>
+                </div><!-- account -->
+
+<hr style="border:0;border-top:2px double #ffd27c;">
+        <div class="profile">
+        <h2>Write your messeage</h2>
+            <textarea name="profile" id="profile" placeholder="Write your messeage"></textarea>
+            
+          </div>
+          <input class="submit" type="submit" value="Submit">
+            </form>
+            
+        </div><!-- /.main-inner -->
+        </div><!-- /.container-->
+
+{% endblock content %}
